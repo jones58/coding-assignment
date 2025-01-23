@@ -52,17 +52,21 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
+    <div className="min-h-screen p-4 sm:p-6 lg:p-8">
       <ThemeToggle />
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <h1 className="text-2xl font-bold">Minecraft Server List</h1>
+      <main className="max-w-7xl mx-auto pt-16">
+        <h1 className="text-3xl font-bold mb-8 text-center sm:text-left">
+          Minecraft Server List
+        </h1>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {serverData ? (
-            serverData.map((server: ServerData) => (
+            serverData.map((server) => (
               <ServerCard key={server.id} {...server} />
             ))
           ) : (
-            <p className="text-foreground/60">Loading servers...</p>
+            <div className="col-span-full flex justify-center">
+              <p className="text-foreground/60">Loading servers...</p>
+            </div>
           )}
         </div>
       </main>
