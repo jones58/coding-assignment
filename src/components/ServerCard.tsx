@@ -20,10 +20,16 @@ const ServerCard: React.FC<ServerCardProps> = ({
   mods,
 }) => {
   return (
-    <div className="bg-background border border-purple-800/50 rounded-lg p-6 hover:shadow-xl transition-shadow hover:shadow-purple-900/40">
+    <div
+      className="bg-background border border-foreground/10 dark:border-purple-800/50 rounded-lg p-6
+      hover:shadow-xl hover:border-purple-500/30 dark:hover:border-purple-500
+      hover:shadow-purple-200/50 dark:hover:shadow-purple-800/50
+      hover:-translate-y-0.5 hover:bg-purple-20/20
+      transition-ease-in-ease-out duration-300"
+    >
       <div className="flex justify-between items-start mb-4">
         <div>
-          <h3 className="text-xl font-bold mb-1 dark:text-purple-50">
+          <h3 className="text-xl font-bold mb-1 text-purple-700 dark:text-purple-100">
             {name}
           </h3>
           <p className="text-foreground/60 dark:text-purple-300/60">
