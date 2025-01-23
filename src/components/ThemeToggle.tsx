@@ -6,21 +6,23 @@ const ThemeToggle = () => {
   const [darkMode, setDarkMode] = useState(false);
 
   useEffect(() => {
-    // Check system preference
+    // Check localStorage first, then system preference
+    const savedTheme = localStorage.getItem("theme");
     const systemPrefersDark = window.matchMedia(
       "(prefers-color-scheme: dark)"
     ).matches;
-    setDarkMode(systemPrefersDark);
+    const initialDarkMode =
+      savedTheme === "dark" ||
+      (savedTheme === null && systemPrefersDark);
 
-    // Apply initial theme based on system preference
-    if (systemPrefersDark) {
-      document.documentElement.classList.add("dark");
-    }
+    setDarkMode(initialDarkMode);
+    document.documentElement.classList.toggle("dark", initialDarkMode);
   }, []);
 
   const toggleTheme = () => {
     const newDarkMode = !darkMode;
     setDarkMode(newDarkMode);
+    localStorage.setItem("theme", newDarkMode ? "dark" : "light");
     document.documentElement.classList.toggle("dark", newDarkMode);
   };
 
