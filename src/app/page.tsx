@@ -52,7 +52,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="min-h-screen p-4 sm:p-6 lg:p-8">
+    <div className="min-h-screen px-4 sm:px-6 lg:px-8 pb-4">
       <main className="max-w-7xl mx-auto pt-16">
         <div className="flex justify-between items-center mb-8">
           <h1 className="text-3xl font-bold text-purple-700 dark:text-purple-600">
