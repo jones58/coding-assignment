@@ -20,11 +20,15 @@ const ServerCard: React.FC<ServerCardProps> = ({
   mods,
 }) => {
   return (
-    <div className="bg-background border border-foreground/10 rounded-lg p-6 hover:shadow-lg transition-shadow">
+    <div className="bg-background border border-purple-800/50 rounded-lg p-6 hover:shadow-xl transition-shadow hover:shadow-purple-900/40">
       <div className="flex justify-between items-start mb-4">
         <div>
-          <h3 className="text-xl font-bold mb-1">{name}</h3>
-          <p className="text-foreground/60">{game}</p>
+          <h3 className="text-xl font-bold mb-1 dark:text-purple-50">
+            {name}
+          </h3>
+          <p className="text-foreground/60 dark:text-purple-300/60">
+            {game}
+          </p>
         </div>
         <span
           className={`px-3 py-1 rounded-full text-sm ${
@@ -39,31 +43,41 @@ const ServerCard: React.FC<ServerCardProps> = ({
 
       <div className="space-y-2">
         <div className="flex justify-between">
-          <span className="text-foreground/60">Players:</span>
-          <span className="">{players}</span>
+          <span className="text-foreground/60 dark:text-purple-300/60">
+            Players:
+          </span>
+          <span className="dark:text-purple-100">{players}</span>
         </div>
         <div className="flex justify-between">
-          <span className="text-foreground/60">Version:</span>
-          <span>{version}</span>
+          <span className="text-foreground/60 dark:text-purple-300/60">
+            Version:
+          </span>
+          <span className="dark:text-purple-100">{version}</span>
         </div>
         <div className="flex justify-between">
-          <span className="text-foreground/60">Type:</span>
-          <span>{type}</span>
+          <span className="text-foreground/60 dark:text-purple-300/60">
+            Type:
+          </span>
+          <span className="dark:text-purple-100">{type}</span>
         </div>
         <div className="flex justify-between">
-          <span className="text-foreground/60">Region:</span>
-          <span>{region}</span>
+          <span className="text-foreground/60 dark:text-purple-300/60">
+            Region:
+          </span>
+          <span className="dark:text-purple-100">{region}</span>
         </div>
       </div>
 
       {mods.length > 0 && (
         <div className="mt-4">
-          <p className="text-sm text-foreground/60 mb-2">Mods:</p>
+          <p className="text-sm text-foreground/60 dark:text-purple-300/60 mb-2">
+            Mods:
+          </p>
           <div className="flex flex-wrap gap-2">
             {mods.map((mod) => (
               <span
                 key={mod}
-                className="text-xs px-2 py-1 rounded-full bg-foreground/5"
+                className="text-xs px-2 py-1 rounded-full bg-foreground/5 dark:bg-purple-900/30 dark:text-purple-200"
               >
                 {mod}
               </span>
